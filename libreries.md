@@ -18,6 +18,8 @@ coroutines = "1.9.0"
 retrofit = "3.0.0"
 kotlinSerialization = "1.9.0"
 kotlinSerializationConverter = "1.0.0"
+coil = "2.7.0"
+lifecycle = "2.8.7"
 
 [libraries]
 # Navigation Compose
@@ -43,6 +45,13 @@ kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 
 #Serialization
 retrofit-kotlinx-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "kotlinSerializationConverter" }
+
+#Coil
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+
+#LifeCycle
+androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 
 [plugins]
 # KSP (Kotlin Symbol Processing) necesario para compilar Room
@@ -106,5 +115,12 @@ dependencies {
     // Gson
     implementation(libs.retrofitConverterGson)
     implementation(libs.kotlinx.coroutines.android)
+
+    //Coil
+    implementation(libs.coil.compose)
+
+    //LifeCycle
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
 ```
